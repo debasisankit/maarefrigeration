@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         y += lineHeight;
         pdf.text('Nabarangpur, ODISHA - 764059', margin, y);
         y += lineHeight;
-        pdf.text(`Email: [Your Email ID]`, margin, y);
+        pdf.text(`Email: Maarefrigeration4@gmail.com`, margin, y);
         y += lineHeight;
-        pdf.text(`Mobile: [Your Mobile No]`, margin, y);
+        pdf.text(`Mobile: 9668581670`, margin, y);
         y += lineHeight * 2;
 
         // Invoice Meta
@@ -175,13 +175,13 @@ document.addEventListener('DOMContentLoaded', function() {
         pdf.text('Bank Details', margin, y);
         y += lineHeight;
         pdf.setFont('helvetica', 'normal');
-        pdf.text('A/C Holder - [Your Account Holder Name]', margin, y);
+        pdf.text('A/C Holder - SUBHASISH SAHOO', margin, y);
         y += lineHeight;
-        pdf.text('Account No. - [Your Account Number]', margin, y);
+        pdf.text('Account No. - 6015101006456', margin, y);
         y += lineHeight;
-        pdf.text('IFSC CODE - [Your IFSC Code]', margin, y);
+        pdf.text('IFSC CODE - 6015101006456', margin, y);
         y += lineHeight;
-        pdf.text('Bank Name - [Your Bank Name]', margin, y);
+        pdf.text('Bank Name - CANARA BANK', margin, y);
 
         // Footer
         const footerY = pdf.internal.pageSize.getHeight() - 30;
