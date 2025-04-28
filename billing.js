@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         y += lineHeight;
         pdf.text('Account No. - 6015101006456', margin, y);
         y += lineHeight;
-        pdf.text('IFSC CODE - 6015101006456', margin, y);
+        pdf.text('IFSC CODE - CNRB0006015', margin, y);
         y += lineHeight;
         pdf.text('Bank Name - CANARA BANK', margin, y);
 
