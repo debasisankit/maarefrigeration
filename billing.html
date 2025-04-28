@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+    <div class="container">
+        <header id="invoiceHeader">
+            <div id="businessInfo">
+                <h2>MAA REFRIGERATION</h2>
+                <p>Near Techno Gurukul School</p>
+                <p>Nabarangpur, ODISHA - 764059</p>
+                <p>Email: Maarefrigeration4@gmail.com</p>
+                <p>Mobile: 9668581670</p>
+            </div>
+            <div id="invoiceMeta">
+                <h1>INVOICE</h1>
+                <p>DATE: <span id="invoiceDateDisplay"></span></p>
+                <p>INVOICE #: <span id="invoiceNumberDisplay"></span></p>
+            </div>
+        </header>
+
+        <section id="billToSection">
+            <h3>BILL TO</h3>
+            <div id="billTo">
+                <p>Name: <span id="customerNameDisplay"></span></p>
+                </div>
+        </section>
+
+        <section id="billingForm">
+            <div>
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" required>
+            </div>
+            <div>
+                <label for="billingDate">Billing Date:</label>
+                <input type="date" id="billingDate" required value="2025-04-28">
+            </div>
+            <div>
+                <label for="invoiceNumber">Invoice #:</label>
+                <input type="text" id="invoiceNumber" value="83/2025">
+            </div>
+
+            <div id="addItemSection">
+                <h3>Add Item</h3>
+                <div class="addItemControls">
+                    <label for="itemDescription">Description:</label>
+                    <input type="text" id="itemDescription" placeholder="Enter description">
+                </div>
+                <div class="addItemControls">
+                    <label for="itemUnitPrice">Unit Price:</label>
+                    <input type="number" id="itemUnitPrice" value="0.00" min="0">
+                </div>
+                <div class="addItemControls">
+                    <label for="itemQty">Quantity:</label>
+                    <input type="number" id="itemQty" value="1" min="1">
+                </div>
+                <button id="addItemBtn">Add Item</button>
+            </div>
+
+            <div id="items">
+                <div class="item-header">
+                    <span>DESCRIPTION</span>
+                    <span>UNIT PRICE</span>
+                    <span>QTY</span>
+                    <span>TAXED</span>
+                    <span>AMOUNT</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="totals">
+            <div class="total-row">
+                <label>Subtotal</label>
+                <span id="subtotalAmount">0.00</span>
+            </div>
+            <div class="total-row total">
+                <label>TOTAL</label>
+                <span id="totalAmount">0.00</span>
+            </div>
+        </section>
+
+        <section id="termsAndBank">
+            <div id="terms">
+                <h3>TERM AND CONDITIONS</h3>
+                <ol>
+                    <li>Goods once sold will not be taken back or exchanged</li>
+                    <li>All disputes are subject to Nabarangpur jurisdiction only</li>
+                </ol>
+            </div>
+            <div id="bankDetails">
+                <h3>Bank Details</h3>
+                <p>A/C Holder - SUBHASISH SAHOO</p>
+                <p>Account No. - 6015101005567</p>
+                <p>IFSC CODE - CNRB0006015</p>
+                <p>Bank Name - CANARA BANK</p>
+            </div>
+        </section>
+
+        <footer id="invoiceFooter">
+            <p>If you have any questions about this invoice, please contact MAA REFRIGERATION</p>
+            <p>Thank You For Your Business!</p>
+            <p>THIS IS A COMPUTER GENERATED BILL - SIGNATURE NOT REQUIRED</p>
+        </footer>
+
+        <button id="generatePdfBtn">Generate PDF</button>
+        <button id="goToAdmin">Go to Admin</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="billing.js"></script>
+</body>
+</html>

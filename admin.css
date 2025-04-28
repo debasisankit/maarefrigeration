@@ -1,0 +1,73 @@
+/* Specific styles for the admin page */
+#itemManagement {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#addItemForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#addItemForm input[type="text"],
+#addItemForm input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    flex-grow: 1;
+    font-size: 11px;
+}
+
+#addItemBtn {
+    background-color: #5cb85c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#addItemBtn:hover {
+    background-color: #4cae4c;
+}
+
+#itemList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#itemList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#itemList li:last-child {
+    border-bottom: none;
+}
+
+#itemList li span {
+    font-size: 12px;
+}
+
+#goToBilling {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#goToBilling:hover {
+    background-color: #2980b9;
+}

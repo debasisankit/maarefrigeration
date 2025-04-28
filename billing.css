@@ -1,0 +1,457 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Make container responsive width */
+    max-width: 800px; /* Set a maximum width */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto; /* Define rows for sections */
+    gap: 20px;
+}
+
+#invoiceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    #invoiceHeader {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+    #invoiceMeta {
+        text-align: right;
+    }
+}
+
+#businessInfo h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#businessInfo p {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+#invoiceMeta {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#invoiceMeta h1 {
+    font-size: 28px;
+    color: #2980b9;
+    margin: 0 0 5px 0;
+}
+
+#invoiceMeta p {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+#billToSection {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    width: 100%; /* Responsive width */
+    max-width: 250px; /* Maximum width */
+}
+
+#billToSection h3 {
+    font-size: 12px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#billTo p {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+#billingForm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive form layout */
+    gap: 10px;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+#billingForm > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#billingForm label {
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#billingForm input[type="text"],
+#billingForm input[type="date"],
+#billingForm input[type="number"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 11px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#items {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables on small screens */
+}
+
+.item-header {
+    display: grid;
+    grid-template-columns: minmax(100px, 2fr) minmax(80px, 1fr) minmax(50px, 0.8fr) minmax(50px, 0.8fr) minmax(80px, 1fr);
+    gap: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#items > div:not(.item-header) {
+    display: grid;
+    grid-template-columns: minmax(100px, 2fr) minmax(80px, 1fr) minmax(50px, 0.8fr) minmax(50px, 0.8fr) minmax(80px, 1fr);
+    gap: 5px;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 11px;
+}
+
+#items > div > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#selectItemBtn {
+    background-color: #007bff; /* Blue color for select item button */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#selectItemBtn:hover {
+    background-color: #0056b3;
+}
+
+#totals {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.total-row label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.total-row.total {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#termsAndBank {
+    display: flex;
+    flex-direction: column; /* Stack on smaller screens */
+    gap: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+@media (min-width: 768px) {
+    #termsAndBank {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+#terms {
+    flex: 1;
+}
+
+#bankDetails {
+    flex: 1;
+}
+
+#terms h3,
+#bankDetails h3 {
+    font-size: 12px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#terms ol {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: decimal;
+    font-size: 11px;
+    color: #555;
+}
+
+#terms li {
+    margin-bottom: 3px;
+}
+
+#bankDetails p {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+#invoiceFooter {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+    font-size: 10px;
+    color: #777;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+#goToBilling, #goToAdmin, #generatePdfBtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#goToBilling:hover, #goToAdmin:hover, #generatePdfBtn:hover {
+    background-color: #2980b9;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width for responsiveness */
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#availableItemsDropdown {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#itemQuantity {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#addItemToBill {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#addItemToBill:hover {
+    background-color: #4cae4c;
+}
+/* Existing CSS */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* ... existing responsive CSS ... */
+}
+
+/* Add Item Section Styles */
+#addItemSection {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+}
+
+#addItemSection h3 {
+    font-size: 14px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.addItemControls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.addItemControls label {
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+    width: 80px; /* Adjust label width as needed */
+}
+
+.addItemControls input[type="text"],
+.addItemControls input[type="number"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 11px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+#addItemBtn {
+    background-color: #28a745; /* Green color for Add Item button */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#addItemBtn:hover {
+    background-color: #218838;
+}
+
+/* Style adjustments for the items table to align with the photo */
+#items .item-header {
+    background-color: #343a40; /* Dark background for header */
+    color: white;
+    padding: 8px;
+    border-radius: 4px 4px 0 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.8fr 0.8fr 1fr;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+#items > div:not(.item-header) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.8fr 0.8fr 1fr;
+    gap: 5px;
+    align-items: center;
+    padding: 8px;
+    font-size: 11px;
+    border-bottom: 1px solid #eee;
+}
+
+#items > div:not(.item-header):nth-child(even) {
+    background-color: #f8f9fa; /* Light gray for even rows */
+}
+
+#items > div > span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
